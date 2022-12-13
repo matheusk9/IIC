@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    </head>
+    <body>
+
+        <div class="container">
+
+            <h1 class="display-4 mt-5">Previsao de morte por COVID-19</h1>
+           
+            <hr>          
+
+            <div class="border p-5">
+                
+                <h2>Informe '1' para sim ou '2' para não:</h2>
+                
+                <div class="form-group">                
+                    <label for="idade">Idade:</label>
+                    <input type="number" value=0 class='form-control' name="idade" id="idade" placeholder="Insira o valor inteiro">                    
+                </div>        
+                
+                <div class="form-group">                
+                    <label for="obeso">Obeso:</label>
+                    <input type="number" value=0 class='form-control' name="obeso" id="obeso" placeholder="Insira '1' para sim ou '2' para nao">                    
+                </div>                
+                
+                <div class="form-group">                
+                    <label for="asma">Asma</label>
+                    <input type="number" value=0 class='form-control' name="asma" id="asma" placeholder="Insira '1' para sim ou '2' para nao">                    
+                </div>
+                
+                <div class="form-group">                
+                    <label for="fumante">Fumante:</label>
+                    <input type="number" value=0 class='form-control' name="fumante" id="fumante" placeholder="Insira '1' para sim ou '2' para nao">                    
+                </div>        
+                
+                <div class="form-group">                
+                    <label for="hipertensao">Hipertensao:</label>
+                    <input type="number" value=0 class='form-control' name="hipertensao" id="hipertensao" placeholder="Insira '1' para sim ou '2' para nao">                    
+                </div>                
+                
+                <div class="form-group">                
+                    <label for="diabete">Diabetico</label>
+                    <input type="number" value=0 class='form-control' name="diabete" id="diabete" placeholder="Insira '1' para sim ou '2' para nao">                    
+                </div>
+
+                <div class="form-group">                
+                    <label for="cardiovascular">Doença relacionada ao coração:</label>
+                    <input type="number" value=0 class='form-control' name="cardiovascular" id="cardiovascular" placeholder="Insira '1' para sim ou '2' para nao">                    
+                </div>                
+                
+                <div class="form-group">                
+                    <label for="pulmao">Doença Pulmonar</label>
+                    <input type="number" value=0 class='form-control' name="pulmao" id="pulmao" placeholder="Insira '1' para sim ou '2' para nao">                    
+                </div>
+
+                <div class="form-group">                
+                    <label for="entubado">Foi ou está entubado</label>
+                    <input type="number" value=0 class='form-control' name="entubado" id="entubado" placeholder="Insira '1' para sim ou '2' para nao">                    
+                </div>
+
+                <div class="form-group my-5">
+                                    
+                    <input type="button" class='btn btn-primary' value="Previsão" onclick="calcular()">                    
+                
+                </div>            
+                
+                <div class="form-group">
+                    <h2 id="resultado">Paciente pode morrer:</h2>
+                </div>
+
+            </div>
+
+        </div>
+        <script>
+            function calcular(){
+                entubado = document.getElementById("entubado").value;
+                idade = document.getElementById("idade").value;
+                obeso = document.getElementById("obeso").value;
+                asma = document.getElementById("asma").value;
+                fumante = document.getElementById("fumante").value;
+                hipertensao = document.getElementById("hipertensao").value;
+                diabete = document.getElementById("diabete").value;
+                cardiovascular = document.getElementById("cardiovascular").value;
+                pulmao = document.getElementById("pulmao").value;
+        
+                resultados = Math.round(1.7882 + ((entubado*0.0032) +(idade*(-0.0027)) + (obeso*(-0.0002)) + (asma*(-0.0005)) +  (fumante*(-0.0003)) + (hipertensao*0.0006) + (diabete*0.0005) + (cardiovascular*(-0.0004)) + (pulmao*(-0.0007)))).toFixed(2);
+               
+                document.getElementById("resultado").innerHTML = "Paciente pode morrer: "+resultados;
+            }
+        </script>
+    </body>
+</html>
+regressaolinear.html
+Exibindo regressaolinear.html…
